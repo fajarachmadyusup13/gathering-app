@@ -1,6 +1,6 @@
 http_port: "1212"
 mysql:
-  host: "mysql:3308"
+  host: "mysql_db:3306"
   database: "gathering_app"
   username: "root"
   password: "gits123"

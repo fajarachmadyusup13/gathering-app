@@ -2,15 +2,14 @@ services:
   # MySQL service
   mysql:
     image: mysql:latest
+    container_name: "mysql_db"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: gits123
       MYSQL_DATABASE: gathering_app
-      MYSQL_USER: root
+      MYSQL_USER: gits
       MYSQL_PASSWORD: gits123
     ports:
-      - "3308:3308"
-    networks:
-      - fullstack
+      - "3306:3306"
     volumes:
       - "./sito/db/:/var/lib/mysql"
 
@@ -21,19 +20,13 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - mysql
+    restart: on-failure:10
     ports:
-      - "1212:1212"
-    networks:
-      - fullstack
+      - "0.0.0.0:1212:1212"
     environment:
       MYSQL_HOST: mysql
-      MYSQL_PORT: 3308
+      MYSQL_PORT: 3306
       MYSQL_USER: root
       MYSQL_PASSWORD: gits123
       MYSQL_DB: gathering_app
-
-networks:
-  fullstack:
-    driver: bridge
-
   

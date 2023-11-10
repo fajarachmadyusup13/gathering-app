@@ -64,5 +64,5 @@ func runHTTPServer(httpService *httpsvc.HTTPService, errCh chan<- error) {
 	g := gin.Default()
 
 	httpService.InitRoutes(g)
-	errCh <- g.Run(fmt.Sprintf(":%s", config.HTTPPort()))
+	errCh <- g.Run(fmt.Sprintf("0.0.0.0:%s", config.HTTPPort()))
 }
