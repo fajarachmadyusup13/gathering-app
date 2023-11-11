@@ -12,6 +12,11 @@ services:
       - "3306:3306"
     volumes:
       - "./sito/db/:/var/lib/mysql"
+      - "./db/migration/1_create_members_migration.sql:/docker-entrypoint-initdb.d/1_create_members_migration.sql"
+      - "./db/migration/2_create_gatherings_migration.sql:/docker-entrypoint-initdb.d/2_create_gatherings_migration.sql"
+      - "./db/migration/3_create_invitations_migration.sql:/docker-entrypoint-initdb.d/3_create_invitations_migration.sql"
+      - "./db/migration/4_create_attendees_migration.sql:/docker-entrypoint-initdb.d/4_create_attendees_migration.sql"
+
 
   # Go service
   go-app:
