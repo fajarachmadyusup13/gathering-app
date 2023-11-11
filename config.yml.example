@@ -1,9 +1,9 @@
 http_port: "1212"
 mysql:
-  host: "localhost:3306"
+  host: "mysql_db:3306"
   database: "gathering_app"
-  username: "gits"
-  password: ""
+  username: "root"
+  password: "gits123"
   sslmode: "disable"
   max_idle_conns: "2"
   max_open_conns: "5"
