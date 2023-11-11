@@ -1,5 +1,5 @@
 services:
-  # MySQL service
+  # MySQL service test
   mysql:
     image: mysql:latest
     container_name: "mysql_db"
