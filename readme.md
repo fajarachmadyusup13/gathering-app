@@ -1,4 +1,22 @@
 
+# Gathering App
+
+This App simulation of real Gathering App, Where some user can be invited to an event
+
+
+
+
+
+## Preparation
+
+This Project can run on docker, so before start, make sure you have docker running in your machine. after that you just need to `compose up`. if the services already run. just check `localhost:1212`
+
+```bash
+  docker compose up
+```
+
+
+
 ## API Reference
 
 ### Member
